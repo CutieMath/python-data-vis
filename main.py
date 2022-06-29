@@ -16,15 +16,24 @@ from mpl_toolkits import mplot3d
 # plt.show()
 
 # Single Points Function
+# ax = plt.axes(projection="3d")
+# x_data = np.arange(0, 50, 0.1)
+# y_data = np.arange(0, 50, 0.1)
+# z_data = np.sin(x_data) * np.cos(y_data)
+# ax.plot(x_data, y_data, z_data)
+# ax.set_title("Cutie plot")
+# ax.set_xlabel("X value label (cm)")
+# ax.set_ylabel("Y value label (cm)")
+# ax.set_zlabel("Z value label (cm)")
+# plt.show()
+
+# Surface Plots (mesh grid)
 ax = plt.axes(projection="3d")
 x_data = np.arange(0, 50, 0.1)
 y_data = np.arange(0, 50, 0.1)
-z_data = np.sin(x_data) * np.cos(y_data)
-ax.plot(x_data, y_data, z_data)
-ax.set_title("Cutie plot")
-ax.set_xlabel("X value label (cm)")
-ax.set_ylabel("Y value label (cm)")
-ax.set_zlabel("Z value label (cm)")
-plt.show()
+X, Y = np.meshgrid(x_data, y_data)
+print(X)
 
-# Scatter Plots
+Z = X * Y
+ax.plot_surface(X, Y, Z)
+plt.show()
