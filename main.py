@@ -28,12 +28,23 @@ from mpl_toolkits import mplot3d
 # plt.show()
 
 # Surface Plots (mesh grid)
+# ax = plt.axes(projection="3d")
+# x_data = np.arange(0, 50, 0.1)
+# y_data = np.arange(0, 50, 0.5)
+# X, Y = np.meshgrid(x_data, y_data)
+# print(X)
+#
+# Z = X * Y
+# ax.plot_surface(X, Y, Z)
+# plt.show()
+
+# Surface Plots
 ax = plt.axes(projection="3d")
-x_data = np.arange(0, 50, 0.1)
-y_data = np.arange(0, 50, 0.1)
+x_data = np.arange(-5, 5, 0.1)
+y_data = np.arange(-5, 5, 0.1)
 X, Y = np.meshgrid(x_data, y_data)
 print(X)
 
-Z = X * Y
+Z = np.sin(X) * np.cos(Y)
 ax.plot_surface(X, Y, Z)
 plt.show()
