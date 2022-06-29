@@ -21,6 +21,10 @@ x_data = np.arange(0, 50, 0.1)
 y_data = np.arange(0, 50, 0.1)
 z_data = np.sin(x_data) * np.cos(y_data)
 ax.plot(x_data, y_data, z_data)
+ax.set_title("Cutie plot")
+ax.set_xlabel("X value label (cm)")
+ax.set_ylabel("Y value label (cm)")
+ax.set_zlabel("Z value label (cm)")
 plt.show()
 
 # Scatter Plots
