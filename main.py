@@ -46,5 +46,10 @@ X, Y = np.meshgrid(x_data, y_data)
 print(X)
 
 Z = np.sin(X) * np.cos(Y)
-ax.plot_surface(X, Y, Z)
+ax.plot_surface(X, Y, Z, cmap="plasma")
+# Add default value for initial position
+# azimuth = 0, elevation of 90
+ax.view_init(azim=0, elev=90)
 plt.show()
+
+
